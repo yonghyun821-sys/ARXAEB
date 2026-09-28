@@ -1,0 +1,7 @@
+{
+  "ledger_path": "E:\\taxonomy-v2\\experiments\\agentrx_agenterrorbench_final_protocol_gemini25flash\\runtime\\api_call_ledger.jsonl",
+  "billed_api_responses": 983,
+  "cost_usd": 7.31183094,
+  "configured_cap_usd": 23.0,
+  "within_cap": true
+}

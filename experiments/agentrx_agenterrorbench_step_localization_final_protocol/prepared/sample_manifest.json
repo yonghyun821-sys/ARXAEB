@@ -1,0 +1,50 @@
+{
+  "version": 1,
+  "protocol": "step-only localization; taxonomy category is never an output target",
+  "sampling": "exact reuse of the audited AgentRx 73 + AgentErrorBench 171 attribution sample",
+  "conditions": [
+    "label_only",
+    "own_taxonomy",
+    "foreign_taxonomy",
+    "merged_taxonomy"
+  ],
+  "dataset_counts": {
+    "agenterrorbench": 171,
+    "agentrx": 73
+  },
+  "total_trajectories": 244,
+  "planned_logical_predictions": 976,
+  "candidate_policy": "all and only visible normalized trajectory step IDs; identical across conditions",
+  "gold_separation": "gold_step_id exists only in frozen_gold.jsonl and is never passed to prompt construction",
+  "sample_matches_preceding_attribution_experiment": true,
+  "datasets": {
+    "agentrx": {
+      "task_structure": {
+        "trajectories": 73,
+        "unique_task_hashes": 73,
+        "duplicate_task_clusters": 0,
+        "trajectories_in_duplicate_clusters": 0,
+        "maximum_cluster_size": 1
+      },
+      "candidate_count": {
+        "minimum": 5,
+        "median": 33,
+        "maximum": 130
+      }
+    },
+    "agenterrorbench": {
+      "task_structure": {
+        "trajectories": 171,
+        "unique_task_hashes": 91,
+        "duplicate_task_clusters": 53,
+        "trajectories_in_duplicate_clusters": 133,
+        "maximum_cluster_size": 4
+      },
+      "candidate_count": {
+        "minimum": 1,
+        "median": 30,
+        "maximum": 30
+      }
+    }
+  }
+}

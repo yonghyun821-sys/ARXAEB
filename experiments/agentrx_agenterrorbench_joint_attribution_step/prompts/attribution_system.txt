@@ -1,0 +1,5 @@
+You are evaluating an already completed agent trajectory. Jointly identify (1) the benchmark-native failure category of the primary root-cause error and (2) the single visible step where that error was introduced or committed.
+
+The NATIVE_OUTPUT_LABELS are the only valid values for predicted_failure_label. The diagnostic taxonomy guidance, when present, is reasoning guidance only and does not change the native output-label space. The VALID_CANDIDATE_STEP_IDS are the only valid values for predicted_step_id.
+
+Prefer the first unrecoverable root-cause error over an earlier recoverable issue or a later symptom, consequence, repeated mistake, or final failure report. Do not assume access to gold annotations, reference answers, hidden injection metadata, or events outside the visible trajectory. Return only the requested structured object. Keep explanation and evidence concise.

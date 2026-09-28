@@ -1,0 +1,83 @@
+experiment:
+  name: agentrx-agenterrorbench-step-localization-final-protocol
+  research_question: Does diagnostic taxonomy guidance help locate the official primary failure-causing step when the complete visible candidate-step list is fixed?
+  seed: 20261001
+  conditions:
+    - label_only
+    - own_taxonomy
+    - foreign_taxonomy
+    - merged_taxonomy
+
+models:
+  merge:
+    name: openai/gpt-5
+    temperature: null
+    reasoning_effort: medium
+    max_output_tokens: 20000
+    context_window: 400000
+    tokenizer_encoding: o200k_base
+    max_tokens_parameter: max_tokens
+    provider:
+      order:
+        - openai
+    pricing_usd_per_million:
+      input: 1.25
+      output: 10.00
+  attribution:
+    name: ${AGENTRX_AEB_STEP_LOCALIZATION_MODEL:google/gemini-2.5-flash}
+    temperature: 0
+    reasoning_effort: null
+    max_output_tokens: 700
+    truncation_retry_max_output_tokens: 1400
+    context_window: 1048576
+    tokenizer_encoding: o200k_base
+    max_tokens_parameter: max_tokens
+    provider:
+      order:
+        - google-vertex
+    pricing_usd_per_million:
+      input: 0.30
+      output: 2.50
+
+api:
+  api_key_env: AGENTRX_AEB_STEP_LOCALIZATION_OPENROUTER_API_KEY
+  base_url: ${OPENROUTER_BASE_URL:https://openrouter.ai/api/v1}
+  app_title: agentrx-agenterrorbench-step-localization-final-protocol
+  http_referer_env: OPENROUTER_HTTP_REFERER
+  max_retries: 3
+  timeout_seconds: 240
+  provider_defaults:
+    allow_fallbacks: false
+    require_parameters: true
+    data_collection: deny
+
+cost_budget:
+  max_inference_usd: 25.00
+  input_token_safety_multiplier: 1.50
+  ledger_baseline_usd: 0.0
+  ledger_path: experiments/agentrx_agenterrorbench_step_localization_final_protocol/runtime/api_call_ledger.jsonl
+
+execution:
+  smoke_trajectories_per_dataset: 2
+  progress_every: 10
+  invalid_step_retries: 2
+  truncation_retries: 1
+
+analysis:
+  bootstrap_resamples: 10000
+  bootstrap_seed: 20261002
+  alpha: 0.05
+
+paths:
+  source_attribution_inputs: experiments/agentrx_agenterrorbench_final_protocol_gemini25flash/prepared/frozen_inputs.jsonl
+  source_agentrx_taxonomy: taxonomies/agentrx_taxonomy.json
+  source_agenterrorbench_taxonomy: taxonomies/agenterror_taxonomy.json
+  source_merged_taxonomy: experiments/agentrx_agenterrorbench_final_protocol_gemini25flash/frozen/native_merged_taxonomy.json
+  source_merged_taxonomy_audit: experiments/agentrx_agenterrorbench_final_protocol_gemini25flash/frozen/native_merged_taxonomy_audit.json
+  experiment_root: experiments/agentrx_agenterrorbench_step_localization_final_protocol
+  prepared: experiments/agentrx_agenterrorbench_step_localization_final_protocol/prepared
+  frozen: experiments/agentrx_agenterrorbench_step_localization_final_protocol/frozen
+  artifacts: experiments/agentrx_agenterrorbench_step_localization_final_protocol/artifacts
+  runtime: experiments/agentrx_agenterrorbench_step_localization_final_protocol/runtime
+  cache: experiments/agentrx_agenterrorbench_step_localization_final_protocol/runtime/cache
+  runs: experiments/agentrx_agenterrorbench_step_localization_final_protocol/runs

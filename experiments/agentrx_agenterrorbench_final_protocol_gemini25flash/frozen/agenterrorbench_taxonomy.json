@@ -1,0 +1,127 @@
+{
+  "taxonomy_id": "agenterror_taxonomy",
+  "name": "AgentErrorTaxonomy",
+  "category_count": 17,
+  "source": {
+    "repository": "repos/AgentDebug",
+    "implementation": "repos/AgentDebug/detector/error_definitions.py",
+    "implementation_sha256": "636537a2397efb2fd412767a1331aa9917fca4353e861fc7a64027ad626b111f",
+    "paper": "papers/agenterrorbench.pdf",
+    "paper_summary": "repos/AgentDebug/README.md lines 124-134"
+  },
+  "representation_policy": "Canonical paper categories with module, category name, and source definition only; implementation examples are omitted for information-content parity with AgentRx.",
+  "categories": [
+    {
+      "id": "memory.over_simplification",
+      "module": "memory",
+      "name": "over_simplification",
+      "definition": "Agent oversimplifies complex information from previous N steps, ignoring details and key factors, leading to decisions based on partial or oversimplified summaries"
+    },
+    {
+      "id": "memory.memory_retrieval_failure",
+      "module": "memory",
+      "name": "memory_retrieval_failure",
+      "definition": "Relevant information exists in agent memory but fails to be retrieved when needed"
+    },
+    {
+      "id": "memory.hallucination",
+      "module": "memory",
+      "name": "hallucination",
+      "definition": "Agent \"recalls\" events that never happened, object states never observed, or actions never executed, and uses these as basis for reasoning. Agent fills in missing parts without solid memory basis, generating false memory information"
+    },
+    {
+      "id": "reflection.progress_misjudge",
+      "module": "reflection",
+      "name": "progress_misjudge",
+      "definition": "Agent incorrectly evaluates progress toward completing the overall task goal, being either overly optimistic or pessimistic"
+    },
+    {
+      "id": "reflection.outcome_misinterpretation",
+      "module": "reflection",
+      "name": "outcome_misinterpretation",
+      "definition": "Agent correctly executes an action but incorrectly interprets the direct result or environment feedback from that action"
+    },
+    {
+      "id": "reflection.causal_misattribution",
+      "module": "reflection",
+      "name": "causal_misattribution",
+      "definition": "Agent correctly identifies a failure phenomenon but attributes it to the wrong cause"
+    },
+    {
+      "id": "planning.constraint_ignorance",
+      "module": "planning",
+      "name": "constraint_ignorance",
+      "definition": "Planning ignores task constraints, not considering resource limits (time, budget, space) or other relevant restrictions"
+    },
+    {
+      "id": "planning.impossible_action",
+      "module": "planning",
+      "name": "impossible_action",
+      "definition": "Agent plans to execute an action or subtask that is fundamentally impossible under current physical or logical conditions. May include decomposition problems"
+    },
+    {
+      "id": "planning.inefficient_plan",
+      "module": "planning",
+      "name": "inefficient_plan",
+      "definition": "Agent creates plan that can theoretically complete task but is extremely inefficient, lengthy, or illogical"
+    },
+    {
+      "id": "action.misalignment",
+      "module": "action",
+      "name": "misalignment",
+      "definition": "Generated specific action completely contradicts the intention stated in current plan module (wrong action choice)"
+    },
+    {
+      "id": "action.invalid_action",
+      "module": "action",
+      "name": "invalid_action",
+      "definition": "Uses action that does not exist"
+    },
+    {
+      "id": "action.format_error",
+      "module": "action",
+      "name": "format_error",
+      "definition": "Generated action has invalid format causing parse failure"
+    },
+    {
+      "id": "action.parameter_error",
+      "module": "action",
+      "name": "parameter_error",
+      "definition": "Action parameters are unreasonable or incorrectly chosen"
+    },
+    {
+      "id": "system.step_limit",
+      "module": "system",
+      "name": "step_limit",
+      "definition": "Agent executes reasonably but fails due to reaching system maximum step limit"
+    },
+    {
+      "id": "system.tool_execution_error",
+      "module": "system",
+      "name": "tool_execution_error",
+      "definition": "External tool or API called by agent returns error or exhibits unpredictable behavior"
+    },
+    {
+      "id": "system.llm_limit",
+      "module": "system",
+      "name": "llm_limit",
+      "definition": "Agent response limitations cause failure"
+    },
+    {
+      "id": "system.environment_error",
+      "module": "system",
+      "name": "environment_error",
+      "definition": "Simulation environment itself has bugs, network issues cause unexpected behavior against expected rules"
+    }
+  ],
+  "excluded_implementation_entries": [
+    {
+      "id": "reflection.hallucination",
+      "reason": "Present in error_definitions.py but absent from the repository's canonical 17-type README table; the paper taxonomy counts hallucination under memory."
+    },
+    {
+      "id": "others.others",
+      "reason": "Implementation fallback category, not one of the 17 paper taxonomy types."
+    }
+  ]
+}

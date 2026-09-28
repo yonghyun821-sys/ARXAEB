@@ -1,0 +1,39 @@
+{
+  "experiment": {
+    "name": "agentrx-agenterrorbench-final-protocol-gemini25flash",
+    "seed": 20260928,
+    "merge_seed": 20260930,
+    "prompt_version": "final-native-guidance-v1",
+    "merge_prompt_version": "fresh-gpt5-metadata-only-v1",
+    "sample_policy": "reuse-exact-audited-joint-eligible-73-plus-171",
+    "conditions": [
+      "label_only",
+      "own_taxonomy",
+      "foreign_taxonomy",
+      "merged_taxonomy"
+    ]
+  },
+  "model": {
+    "name": "google/gemini-2.5-flash",
+    "temperature": 0,
+    "reasoning_effort": null,
+    "max_output_tokens": 700,
+    "truncation_retry_max_output_tokens": 1400,
+    "context_window": 1048576,
+    "tokenizer_encoding": "o200k_base",
+    "max_tokens_parameter": "max_tokens",
+    "provider": {
+      "order": [
+        "google-vertex"
+      ]
+    },
+    "pricing_usd_per_million": {
+      "input": 0.3,
+      "output": 2.5
+    }
+  },
+  "inputs_sha256": "712bbfe1496cde3a6ed84dda10164977e3b19a23e52c884c1e0aba376bca9355",
+  "gold_sha256": "0926f397698ff563b7dde6788a2159345625e4c006e95a60e7fce639c64e0715",
+  "merged_taxonomy_sha256": "a45f142947cbeed3e8c6387afb729197d0947cb1577d9b5db89b96135bd325b5",
+  "scoring": "exact_native_category_id_no_relabeler"
+}

@@ -1,0 +1,49 @@
+{
+  "status": "READY_FOR_FROZEN_GPT5_MERGE_REUSE_AND_INFERENCE",
+  "api_calls_during_preflight": 0,
+  "checks": {
+    "dataset_counts_exact": true,
+    "exact_prior_joint_sample_reuse": true,
+    "four_conditions": true,
+    "planned_rows_976": true,
+    "gold_absent_from_inputs": true,
+    "all_gold_ids_native": true,
+    "same_output_space_across_conditions": true,
+    "only_guidance_changes": true,
+    "no_step_prediction_instruction": true,
+    "label_only_has_no_definitions": true,
+    "all_prompts_within_context": true,
+    "conservative_cost_within_cap": true
+  },
+  "failed_checks": [],
+  "dataset_counts": {
+    "agenterrorbench": 171,
+    "agentrx": 73
+  },
+  "total_trajectories": 244,
+  "planned_logical_predictions": 976,
+  "model": "google/gemini-2.5-flash",
+  "merge_policy": "reuse the bundled GPT-5 metadata-only merge after deterministic exact-once provenance validation",
+  "cost_preflight": {
+    "raw_prompt_tokens": 21144412,
+    "guarded_prompt_tokens": 31716618,
+    "maximum_prompt_tokens": 114337,
+    "conservative_reserve_usd": 11.2229854,
+    "hard_cap_usd": 23.0
+  },
+  "merge_api_calls_during_preflight": 0,
+  "fresh_merge_plan": {
+    "model": "openai/gpt-5",
+    "reasoning_effort": "medium",
+    "raw_prompt_tokens": 1829,
+    "guarded_prompt_tokens": 2744,
+    "maximum_output_tokens": 20000,
+    "conservative_reserve_usd": 0.0,
+    "merge_cap_usd": 2.0,
+    "taxonomy_metadata_only": true,
+    "bundled_frozen_merge_reused": true,
+    "trajectory_gold_predictions_or_results_used": false
+  },
+  "combined_conservative_reserve_usd": 11.2229854,
+  "combined_hard_cap_usd": 25.0
+}

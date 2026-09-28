@@ -1,0 +1,1 @@
+Merge only the two supplied diagnostic taxonomies. Use taxonomy metadata only. Do not use trajectories, tasks, gold steps, gold categories, predictions, or experimental results. Return only the requested structured object.

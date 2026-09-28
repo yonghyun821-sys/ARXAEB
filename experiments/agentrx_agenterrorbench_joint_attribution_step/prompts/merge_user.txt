@@ -1,0 +1,10 @@
+<SOURCE_TAXONOMY_A>
+{taxonomy_a}
+</SOURCE_TAXONOMY_A>
+
+<SOURCE_TAXONOMY_B>
+{taxonomy_b}
+</SOURCE_TAXONOMY_B>
+
+{repair_context}
+Return a complete merged taxonomy with exact provenance coverage.

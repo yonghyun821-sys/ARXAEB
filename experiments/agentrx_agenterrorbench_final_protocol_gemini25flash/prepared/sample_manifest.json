@@ -1,0 +1,97 @@
+{
+  "version": 1,
+  "confirmatory_protocol": "attribution-only; no step target or candidate list in prompt",
+  "sampling": "exact reuse of the prior joint-eligible 73 AgentRx plus 171 AgentErrorBench trajectories",
+  "conditions": [
+    "label_only",
+    "own_taxonomy",
+    "foreign_taxonomy",
+    "merged_taxonomy"
+  ],
+  "dataset_counts": {
+    "agenterrorbench": 171,
+    "agentrx": 73
+  },
+  "total_trajectories": 244,
+  "planned_logical_predictions": 976,
+  "inputs_sha256": "712bbfe1496cde3a6ed84dda10164977e3b19a23e52c884c1e0aba376bca9355",
+  "gold_sha256": "0926f397698ff563b7dde6788a2159345625e4c006e95a60e7fce639c64e0715",
+  "prior_joint_input_sha256": "a04b2b5f44a3ba91a7dca40c51cb7805846d8fd9aa16e8adae1579fdb5dba444",
+  "exact_prior_joint_key_and_task_hash_match": true,
+  "dataset_audits": {
+    "agentrx": {
+      "included": 73,
+      "exclusions": {},
+      "task_structure": {
+        "trajectories": 73,
+        "unique_task_hashes": 73,
+        "duplicate_task_clusters": 0,
+        "trajectories_in_duplicate_clusters": 0,
+        "maximum_cluster_size": 1
+      },
+      "source_loader_stats": {
+        "total_trajectories": 87,
+        "total_official_annotations": 73,
+        "matched_pairs": 73,
+        "eligible_attribution_pairs": 73,
+        "missing_gold_failure_types": 0,
+        "missing_gold_reasoning": 0,
+        "domain_trajectory_counts": {
+          "tau_retail": 29,
+          "magentic_one": 58
+        },
+        "domain_annotation_counts": {
+          "tau_retail": 29,
+          "magentic_one": 44
+        },
+        "unmatched_annotation_ids": [],
+        "unmatched_trajectory_ids": [
+          "magentic_one:0a3cd321-3e76-4622-911b-0fda2e5d6b1a",
+          "magentic_one:291b53e665b4dd4365cde995042db4a6f6fecef3fe3a6f4482f23d61bd673918",
+          "magentic_one:4dbedc5e1a0205e14b7ff3ba89bce3060dab15d0ada3b7e1351a6f2aa8287aec",
+          "magentic_one:6f224e7730ed027cbac73aebb1aea7f954053082041b02b19f4ff126a0a8a208",
+          "magentic_one:7619a514-5fa8-43ef-9143-83b66a43d7a4",
+          "magentic_one:7673d772-ef80-4f0f-a602-1bf4485c9b43",
+          "magentic_one:8d46b8d6-b38a-47ff-ac74-cda14cf2d19b",
+          "magentic_one:9bdca8677af1e25cb7b0c7992dc62670c3e58e4afcd5ae60bcaa2483556bba00",
+          "magentic_one:a0c07678-e491-4bbc-8f0b-07405144218f",
+          "magentic_one:cca4776df3c73e7f9430a2e624aafad056b14322a0b7ca6c0c22b7e7f3f0890a",
+          "magentic_one:db4fd70a-2d37-40ea-873f-9433dc5e301f",
+          "magentic_one:e2d69698-bc99-4e85-9880-67eaccd66e6c",
+          "magentic_one:ed58682d-bc52-4baa-9eb0-4eb81e1edacc",
+          "magentic_one:efc0f3a47e9ed2ecdbcc037c2093865fe6e39f4d413a5d1ccdc7357160a4606b"
+        ]
+      }
+    },
+    "agenterrorbench": {
+      "included": 171,
+      "exclusions": {
+        "gold_step_not_visible": 1,
+        "missing_fine_grained_native_label": 27,
+        "noncanonical_native_label": 1
+      },
+      "task_structure": {
+        "trajectories": 171,
+        "unique_task_hashes": 91,
+        "duplicate_task_clusters": 53,
+        "trajectories_in_duplicate_clusters": 133,
+        "maximum_cluster_size": 4
+      },
+      "source_loader_stats": {
+        "total_trajectories": 200,
+        "total_official_annotations": 200,
+        "matched_pairs": 200,
+        "eligible_attribution_pairs": 173,
+        "missing_gold_failure_types": 27,
+        "missing_gold_reasoning": 43,
+        "domain_trajectory_counts": {
+          "alfworld": 100,
+          "gaia": 50,
+          "webshop": 50
+        },
+        "unmatched_annotation_ids": [],
+        "unmatched_trajectory_ids": []
+      }
+    }
+  }
+}

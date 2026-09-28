@@ -1,0 +1,18 @@
+Create one native merged diagnostic taxonomy from SOURCE_TAXONOMY_A and SOURCE_TAXONOMY_B.
+
+Rules:
+1. Merge categories only when they describe nearly the same failure mechanism.
+2. Preserve meaningfully different mechanisms as separate categories.
+3. Every source category must appear in source_categories exactly once across the complete output.
+4. Use only supplied IDs, names, modules, and definitions.
+5. Use consecutive merged IDs MT-01, MT-02, and so on.
+
+<SOURCE_TAXONOMY_A>
+{taxonomy_a}
+</SOURCE_TAXONOMY_A>
+
+<SOURCE_TAXONOMY_B>
+{taxonomy_b}
+</SOURCE_TAXONOMY_B>
+
+{repair_context}

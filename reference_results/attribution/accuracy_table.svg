@@ -1,0 +1,47 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="310" viewBox="0 0 1200 310">
+  <rect width="1200" height="310" fill="#ffffff"/>
+  <style>
+    text { font-family: Arial, Helvetica, sans-serif; fill: #202124; }
+    .title { font-size: 25px; font-weight: 700; }
+    .header { font-size: 16px; font-weight: 600; }
+    .cell { font-size: 16px; font-weight: 400; }
+    .note { font-size: 13px; fill: #667085; }
+    .line { stroke: #cfd4dc; stroke-width: 1; }
+  </style>
+
+  <text x="600" y="38" text-anchor="middle" class="title">Attribution Accuracy</text>
+
+  <rect x="35" y="65" width="1130" height="55" fill="#f3f4f6"/>
+  <rect x="35" y="65" width="1130" height="165" fill="none" stroke="#aeb4bd" stroke-width="1.2"/>
+
+  <line x1="245" y1="65" x2="245" y2="230" class="line"/>
+  <line x1="330" y1="65" x2="330" y2="230" class="line"/>
+  <line x1="530" y1="65" x2="530" y2="230" class="line"/>
+  <line x1="740" y1="65" x2="740" y2="230" class="line"/>
+  <line x1="955" y1="65" x2="955" y2="230" class="line"/>
+  <line x1="35" y1="120" x2="1165" y2="120" class="line"/>
+  <line x1="35" y1="175" x2="1165" y2="175" class="line"/>
+
+  <text x="140" y="98" text-anchor="middle" class="header">Dataset</text>
+  <text x="287.5" y="98" text-anchor="middle" class="header">N</text>
+  <text x="430" y="98" text-anchor="middle" class="header">Label-Only</text>
+  <text x="635" y="98" text-anchor="middle" class="header">Own Taxonomy</text>
+  <text x="847.5" y="98" text-anchor="middle" class="header">Foreign Taxonomy</text>
+  <text x="1060" y="98" text-anchor="middle" class="header">Merged Taxonomy</text>
+
+  <text x="140" y="153" text-anchor="middle" class="cell">AgentRx</text>
+  <text x="287.5" y="153" text-anchor="middle" class="cell">73</text>
+  <text x="430" y="153" text-anchor="middle" class="cell">23.29%</text>
+  <text x="635" y="153" text-anchor="middle" class="cell">26.03%</text>
+  <text x="847.5" y="153" text-anchor="middle" class="cell">19.18%</text>
+  <text x="1060" y="153" text-anchor="middle" class="cell">24.66%</text>
+
+  <text x="140" y="208" text-anchor="middle" class="cell">AgentErrorBench</text>
+  <text x="287.5" y="208" text-anchor="middle" class="cell">171</text>
+  <text x="430" y="208" text-anchor="middle" class="cell">14.04%</text>
+  <text x="635" y="208" text-anchor="middle" class="cell">15.79%</text>
+  <text x="847.5" y="208" text-anchor="middle" class="cell">14.62%</text>
+  <text x="1060" y="208" text-anchor="middle" class="cell">16.96%</text>
+
+  <text x="600" y="270" text-anchor="middle" class="note">Model: Gemini 2.5 Flash | Metric: native-label exact-match accuracy</text>
+</svg>

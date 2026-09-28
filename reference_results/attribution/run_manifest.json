@@ -1,0 +1,15 @@
+{
+  "status": "COMPLETE",
+  "completed_at_utc": "2026-09-28T00:05:36.828354+00:00",
+  "run_id": "attr-only-83d2e76eee9f6fa7",
+  "logical_predictions": 976,
+  "model": "google/gemini-2.5-flash",
+  "outputs": {
+    "final_results": "E:\\taxonomy-v2\\experiments\\agentrx_agenterrorbench_final_protocol_gemini25flash\\runs\\attr-only-83d2e76eee9f6fa7\\FINAL_RESULTS.md",
+    "condition_results": "E:\\taxonomy-v2\\experiments\\agentrx_agenterrorbench_final_protocol_gemini25flash\\runs\\attr-only-83d2e76eee9f6fa7\\condition_results.csv",
+    "paired_contrasts": "E:\\taxonomy-v2\\experiments\\agentrx_agenterrorbench_final_protocol_gemini25flash\\runs\\attr-only-83d2e76eee9f6fa7\\paired_contrasts.csv",
+    "protocol_comparison": "E:\\taxonomy-v2\\experiments\\agentrx_agenterrorbench_final_protocol_gemini25flash\\runs\\attr-only-83d2e76eee9f6fa7\\joint_vs_attribution_only.csv",
+    "scored_predictions": "E:\\taxonomy-v2\\experiments\\agentrx_agenterrorbench_final_protocol_gemini25flash\\runs\\attr-only-83d2e76eee9f6fa7\\predictions_scored.csv",
+    "cost_summary": "E:\\taxonomy-v2\\experiments\\agentrx_agenterrorbench_final_protocol_gemini25flash\\runs\\attr-only-83d2e76eee9f6fa7\\cost_summary.json"
+  }
+}

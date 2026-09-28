@@ -1,0 +1,35 @@
+{
+  "status": "READY_FOR_STEP_LOCALIZATION_INFERENCE",
+  "api_calls_during_preflight": 0,
+  "checks": {
+    "dataset_counts_exact": true,
+    "four_conditions": true,
+    "planned_rows_976": true,
+    "sample_matches_attribution_experiment": true,
+    "gold_absent_from_inputs": true,
+    "gold_visible_but_prompt_hidden": true,
+    "all_candidate_lists_nonempty_unique": true,
+    "same_prompt_except_guidance": true,
+    "candidate_list_identical_across_conditions": true,
+    "step_only_output": true,
+    "label_only_omits_definitions": true,
+    "all_prompts_within_context": true,
+    "conservative_cost_within_cap": true
+  },
+  "failed_checks": [],
+  "dataset_counts": {
+    "agenterrorbench": 171,
+    "agentrx": 73
+  },
+  "total_trajectories": 244,
+  "planned_logical_predictions": 976,
+  "model": "google/gemini-2.5-flash",
+  "merged_taxonomy_policy": "reuse the newly generated frozen GPT-5 merge from the preceding attribution experiment",
+  "cost_preflight": {
+    "raw_prompt_tokens": 20957211,
+    "guarded_prompt_tokens": 31435817,
+    "maximum_prompt_tokens": 113494,
+    "projected_total_usd": 11.1387451,
+    "hard_cap_usd": 25.0
+  }
+}

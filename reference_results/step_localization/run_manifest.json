@@ -1,0 +1,55 @@
+{
+  "run_id": "step-main-34b4ce3a83be0883",
+  "research_question": "Does diagnostic taxonomy guidance help locate the official primary failure-causing step when the complete visible candidate-step list is fixed?",
+  "conditions": [
+    "label_only",
+    "own_taxonomy",
+    "foreign_taxonomy",
+    "merged_taxonomy"
+  ],
+  "models": {
+    "merge": {
+      "name": "openai/gpt-5",
+      "temperature": null,
+      "reasoning_effort": "medium",
+      "max_output_tokens": 20000,
+      "context_window": 400000,
+      "tokenizer_encoding": "o200k_base",
+      "max_tokens_parameter": "max_tokens",
+      "provider": {
+        "order": [
+          "openai"
+        ]
+      },
+      "pricing_usd_per_million": {
+        "input": 1.25,
+        "output": 10.0
+      }
+    },
+    "attribution": {
+      "name": "google/gemini-2.5-flash",
+      "temperature": 0,
+      "reasoning_effort": null,
+      "max_output_tokens": 700,
+      "truncation_retry_max_output_tokens": 1400,
+      "context_window": 1048576,
+      "tokenizer_encoding": "o200k_base",
+      "max_tokens_parameter": "max_tokens",
+      "provider": {
+        "order": [
+          "google-vertex"
+        ]
+      },
+      "pricing_usd_per_million": {
+        "input": 0.3,
+        "output": 2.5
+      }
+    }
+  },
+  "sample_manifest_sha256": "2caed207f39f7fe851cb5e37c5e46edbb645cd792210c35e7fb98aef174cdc5d",
+  "native_merged_taxonomy_sha256": "a45f142947cbeed3e8c6387afb729197d0947cb1577d9b5db89b96135bd325b5",
+  "planned_trajectories": 244,
+  "planned_prediction_rows": 976,
+  "candidate_step_policy": "all and only visible normalized trajectory step IDs; identical across conditions",
+  "prompt_difference_policy": "Only the diagnostic taxonomy block varies across conditions."
+}

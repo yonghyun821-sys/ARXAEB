@@ -1,0 +1,13 @@
+<TASK>
+{task}
+</TASK>
+
+{taxonomy_block}<VALID_CANDIDATE_STEP_IDS>
+{candidate_step_ids}
+</VALID_CANDIDATE_STEP_IDS>
+
+<VISIBLE_TRAJECTORY>
+{trajectory}
+</VISIBLE_TRAJECTORY>
+
+Select exactly one ID from VALID_CANDIDATE_STEP_IDS as predicted_step_id. Identify the step where the primary failure-causing error is introduced or committed, not merely where its downstream consequence becomes visible.

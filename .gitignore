@@ -1,0 +1,10 @@
+.env
+.venv/
+**/__pycache__/
+*.py[cod]
+
+# Live API state is deliberately not committed.
+experiments/*/runtime/
+
+# New run outputs can be large. Remove this line if new outputs should be committed.
+experiments/*/runs/

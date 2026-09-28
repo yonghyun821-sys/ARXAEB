@@ -1,0 +1,74 @@
+{
+  "taxonomy_id": "agentrx_taxonomy",
+  "name": "AgentRx Taxonomy",
+  "category_count": 10,
+  "source": {
+    "repository": "repos/AgentRx",
+    "implementation": "repos/AgentRx/agentrx/judge/judge.py:TAXONOMY_DATA",
+    "implementation_sha256": "6a51c25a7b70934d65be79f2ceb6d20d51be73144dde1d9cf7df93795ce546a2",
+    "paper": "papers/agentrx.pdf"
+  },
+  "representation_policy": "Canonical TAXONOMY_DATA names and desc_standard definitions only; checklists and examples are omitted for information-content parity with AgentErrorTaxonomy.",
+  "categories": [
+    {
+      "id": "1",
+      "module": null,
+      "name": "Instruction/Plan Adherence Failure",
+      "definition": "The agent fails to follow the directions or the agreed plan by ignoring directives and skipping policy steps. \nThis covers both under-execution (missed steps) and over-execution (unplanned or unnecessary actions, e.g., extra tool calls) that deviate from the static plan, \ndomain policy or orchestrator plan."
+    },
+    {
+      "id": "2",
+      "module": null,
+      "name": "Invention of New Information",
+      "definition": "The agent introduces, removes, or alters information that is not grounded in any available input, context, or tool output. This includes fabricating unsupported facts, hallucinating details, or omitting relevant information without justification."
+    },
+    {
+      "id": "3",
+      "module": null,
+      "name": "Invalid Invocation",
+      "definition": "The agent encounters errors triggered by inputs that can't be parsed or validated e.g., Kusto syntax errors or tool calls with bad/missing arguments. Not involving wrong logic; just invalid inputs."
+    },
+    {
+      "id": "4",
+      "module": null,
+      "name": "Misinterpretation of Tool Output / Handoff Failure",
+      "definition": "The agent incorrectly reasons about its own or another agent's tool output (like computation errors), leading to incorrect assumptions or actions. This also includes cases where the agent considered only partial tool output."
+    },
+    {
+      "id": "5",
+      "module": null,
+      "name": "Intent-Plan Misalignment",
+      "definition": "The agent misreads the user's goal or constraints and produces the wrong step sequence or structure. Covers both bad ordering/structure and plans aimed at the wrong objective."
+    },
+    {
+      "id": "6",
+      "module": null,
+      "name": "Underspecified User Intent",
+      "definition": "The agent was unable to complete the task due to lack of complete information at any point in the trajectory/plan execution."
+    },
+    {
+      "id": "7",
+      "module": null,
+      "name": "Intent Not Supported",
+      "definition": "The agent/user is asking to perform an action for which a tool is not available, like listening to an audio file."
+    },
+    {
+      "id": "8",
+      "module": null,
+      "name": "Guardrails Triggered",
+      "definition": "The agent is blocked by safety/RAI policies or by external site access restrictions, preventing execution despite a valid plan. Examples include policy refusals (e.g., unsafe content, privacy-protected data), CAPTCHA/robot blocks, login/paywall/403/robots.txt denials, or site forbids automation. This is not an agent planning/execution error; it is an external/guardrail block."
+    },
+    {
+      "id": "9",
+      "module": null,
+      "name": "System Failure",
+      "definition": "The agent faces a system connectivity issue while calling a particular tool like an endpoint not being reachable"
+    },
+    {
+      "id": "10",
+      "module": null,
+      "name": "Inconclusive (USE SPARINGLY)",
+      "definition": "If you are not able to classify the failure into any of the above categories, label it as inconclusive and create your own category."
+    }
+  ]
+}

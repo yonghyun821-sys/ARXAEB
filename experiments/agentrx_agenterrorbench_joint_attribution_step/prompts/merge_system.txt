@@ -1,0 +1,3 @@
+Create one compact diagnostic taxonomy by semantically merging the two supplied source taxonomies. Use taxonomy metadata only. Never assume access to trajectories, gold answers, predictions, or results.
+
+Merge source categories only when they describe substantially the same failure mechanism. Preserve distinct mechanisms. Every exact source taxonomy/category pair must occur in source_categories exactly once across the complete output. Do not invent source references. Use consecutive ordered IDs MT-01, MT-02, and so on. Return only the requested structured object.

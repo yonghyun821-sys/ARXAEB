@@ -1,0 +1,264 @@
+{
+  "status": "generated_and_frozen_validated_merge",
+  "attempt_count": 1,
+  "human_semantic_edits": false,
+  "attempts": [
+    {
+      "attempt": 1,
+      "cache_key": "2c33bcff414cd4e733dc742113be37a3bce240c936cd13b774acd0f369a43894",
+      "cache_hit": false,
+      "parsed_output": {
+        "name": "Merged Agent Failure Taxonomy",
+        "description": "Compact semantic merge of AgentRx Taxonomy and AgentErrorTaxonomy with complete, non-duplicated provenance coverage.",
+        "categories": [
+          {
+            "id": "MT-01",
+            "name": "Plan/Instruction Non-Adherence",
+            "definition": "Agent deviates from given directions or agreed plan, including taking actions that contradict the current plan (wrong action choice), under- or over-executing relative to policy/orchestrator steps.",
+            "module": "action",
+            "source_categories": [
+              {
+                "source_taxonomy_id": "agentrx_taxonomy",
+                "source_category_id": "1"
+              },
+              {
+                "source_taxonomy_id": "agenterror_taxonomy",
+                "source_category_id": "action.misalignment"
+              }
+            ]
+          },
+          {
+            "id": "MT-02",
+            "name": "Invention/Hallucination of Information",
+            "definition": "Agent fabricates, alters, or omits information not grounded in inputs/context/tools, including \"recalling\" events or states that never occurred.",
+            "module": "memory",
+            "source_categories": [
+              {
+                "source_taxonomy_id": "agentrx_taxonomy",
+                "source_category_id": "2"
+              },
+              {
+                "source_taxonomy_id": "agenterror_taxonomy",
+                "source_category_id": "memory.hallucination"
+              }
+            ]
+          },
+          {
+            "id": "MT-03",
+            "name": "Invalid Invocation/Action/Format/Parameters",
+            "definition": "Action/tool call is invalid due to nonexistent action, malformed format, or bad/missing/unreasonable parameters; failures stem from invalid inputs rather than logic.",
+            "module": "action",
+            "source_categories": [
+              {
+                "source_taxonomy_id": "agentrx_taxonomy",
+                "source_category_id": "3"
+              },
+              {
+                "source_taxonomy_id": "agenterror_taxonomy",
+                "source_category_id": "action.invalid_action"
+              },
+              {
+                "source_taxonomy_id": "agenterror_taxonomy",
+                "source_category_id": "action.format_error"
+              },
+              {
+                "source_taxonomy_id": "agenterror_taxonomy",
+                "source_category_id": "action.parameter_error"
+              }
+            ]
+          },
+          {
+            "id": "MT-04",
+            "name": "Misinterpretation of Outputs/Handoff",
+            "definition": "Agent misreads or partially considers tool/environment results or handoff outputs, leading to incorrect conclusions or next steps.",
+            "module": "reflection",
+            "source_categories": [
+              {
+                "source_taxonomy_id": "agentrx_taxonomy",
+                "source_category_id": "4"
+              },
+              {
+                "source_taxonomy_id": "agenterror_taxonomy",
+                "source_category_id": "reflection.outcome_misinterpretation"
+              }
+            ]
+          },
+          {
+            "id": "MT-05",
+            "name": "Intent–Plan Misalignment / Constraint or Impossibility",
+            "definition": "Plan targets the wrong objective, has poor ordering/structure, ignores constraints, or proposes impossible steps under current conditions.",
+            "module": "planning",
+            "source_categories": [
+              {
+                "source_taxonomy_id": "agentrx_taxonomy",
+                "source_category_id": "5"
+              },
+              {
+                "source_taxonomy_id": "agenterror_taxonomy",
+                "source_category_id": "planning.constraint_ignorance"
+              },
+              {
+                "source_taxonomy_id": "agenterror_taxonomy",
+                "source_category_id": "planning.impossible_action"
+              }
+            ]
+          },
+          {
+            "id": "MT-06",
+            "name": "Underspecified User Intent",
+            "definition": "Task cannot be completed due to missing or incomplete user-provided information at some point in planning/execution.",
+            "module": "general",
+            "source_categories": [
+              {
+                "source_taxonomy_id": "agentrx_taxonomy",
+                "source_category_id": "6"
+              }
+            ]
+          },
+          {
+            "id": "MT-07",
+            "name": "Intent Not Supported (Capability/Tool Missing)",
+            "definition": "Requested intent/action is unsupported because the required capability or tool is unavailable.",
+            "module": "general",
+            "source_categories": [
+              {
+                "source_taxonomy_id": "agentrx_taxonomy",
+                "source_category_id": "7"
+              }
+            ]
+          },
+          {
+            "id": "MT-08",
+            "name": "Guardrails or System Limits Triggered",
+            "definition": "Execution blocked by safety/policy/access restrictions or system-imposed limits (e.g., step caps); external limit rather than planning/execution error.",
+            "module": "system",
+            "source_categories": [
+              {
+                "source_taxonomy_id": "agentrx_taxonomy",
+                "source_category_id": "8"
+              },
+              {
+                "source_taxonomy_id": "agenterror_taxonomy",
+                "source_category_id": "system.step_limit"
+              }
+            ]
+          },
+          {
+            "id": "MT-09",
+            "name": "System/Tool/Environment Failure",
+            "definition": "Failure due to external tool, system, or environment issues (e.g., connectivity, API errors, unpredictable behavior), independent of input validity.",
+            "module": "system",
+            "source_categories": [
+              {
+                "source_taxonomy_id": "agentrx_taxonomy",
+                "source_category_id": "9"
+              },
+              {
+                "source_taxonomy_id": "agenterror_taxonomy",
+                "source_category_id": "system.tool_execution_error"
+              },
+              {
+                "source_taxonomy_id": "agenterror_taxonomy",
+                "source_category_id": "system.environment_error"
+              }
+            ]
+          },
+          {
+            "id": "MT-10",
+            "name": "Inconclusive",
+            "definition": "Failure cannot be confidently mapped to other categories.",
+            "module": "general",
+            "source_categories": [
+              {
+                "source_taxonomy_id": "agentrx_taxonomy",
+                "source_category_id": "10"
+              }
+            ]
+          },
+          {
+            "id": "MT-11",
+            "name": "Memory Oversimplification",
+            "definition": "Agent over-summarizes prior context, ignoring details and key factors, and bases decisions on oversimplified memory.",
+            "module": "memory",
+            "source_categories": [
+              {
+                "source_taxonomy_id": "agenterror_taxonomy",
+                "source_category_id": "memory.over_simplification"
+              }
+            ]
+          },
+          {
+            "id": "MT-12",
+            "name": "Memory Retrieval Failure",
+            "definition": "Relevant information exists in memory but is not retrieved when needed.",
+            "module": "memory",
+            "source_categories": [
+              {
+                "source_taxonomy_id": "agenterror_taxonomy",
+                "source_category_id": "memory.memory_retrieval_failure"
+              }
+            ]
+          },
+          {
+            "id": "MT-13",
+            "name": "Progress Misjudgment",
+            "definition": "Agent misestimates progress toward the overall goal (overly optimistic or pessimistic).",
+            "module": "reflection",
+            "source_categories": [
+              {
+                "source_taxonomy_id": "agenterror_taxonomy",
+                "source_category_id": "reflection.progress_misjudge"
+              }
+            ]
+          },
+          {
+            "id": "MT-14",
+            "name": "Causal Misattribution",
+            "definition": "Agent identifies an effect or failure but attributes it to the wrong cause.",
+            "module": "reflection",
+            "source_categories": [
+              {
+                "source_taxonomy_id": "agenterror_taxonomy",
+                "source_category_id": "reflection.causal_misattribution"
+              }
+            ]
+          },
+          {
+            "id": "MT-15",
+            "name": "LLM Limitation",
+            "definition": "Failure due to intrinsic LLM response limits (e.g., context/generation constraints).",
+            "module": "system",
+            "source_categories": [
+              {
+                "source_taxonomy_id": "agenterror_taxonomy",
+                "source_category_id": "system.llm_limit"
+              }
+            ]
+          },
+          {
+            "id": "MT-16",
+            "name": "Inefficient Plan",
+            "definition": "Plan could succeed but is unnecessarily inefficient, lengthy, or illogical.",
+            "module": "planning",
+            "source_categories": [
+              {
+                "source_taxonomy_id": "agenterror_taxonomy",
+                "source_category_id": "planning.inefficient_plan"
+              }
+            ]
+          }
+        ]
+      },
+      "validation": {
+        "merged_category_count": 16,
+        "source_category_count": 27,
+        "all_source_categories_exactly_once": true,
+        "merged_taxonomy_sha256": "a45f142947cbeed3e8c6387afb729197d0947cb1577d9b5db89b96135bd325b5"
+      }
+    }
+  ],
+  "merged_category_count": 16,
+  "source_category_count": 27,
+  "all_source_categories_exactly_once": true,
+  "merged_taxonomy_sha256": "a45f142947cbeed3e8c6387afb729197d0947cb1577d9b5db89b96135bd325b5"
+}

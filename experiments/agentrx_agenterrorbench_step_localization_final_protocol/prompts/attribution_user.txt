@@ -1,0 +1,23 @@
+<TASK>
+{task}
+</TASK>
+
+<DIAGNOSTIC_GUIDANCE>
+{diagnostic_guidance}
+</DIAGNOSTIC_GUIDANCE>
+
+<VALID_CANDIDATE_STEP_IDS>
+{candidate_step_ids}
+</VALID_CANDIDATE_STEP_IDS>
+
+<VISIBLE_TRAJECTORY>
+{trajectory}
+</VISIBLE_TRAJECTORY>
+
+Select exactly one ID from VALID_CANDIDATE_STEP_IDS. Identify the visible step where the primary failure-causing error was introduced or committed, not merely where its downstream consequence became visible.
+
+Return one JSON object with exactly these fields:
+- predicted_step_id: exactly one ID copied from VALID_CANDIDATE_STEP_IDS
+- explanation: one short sentence explaining why this is the primary causal step
+- evidence: one short sentence grounded only in VISIBLE_TRAJECTORY
+

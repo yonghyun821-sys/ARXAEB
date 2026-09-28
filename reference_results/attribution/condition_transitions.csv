@@ -1,0 +1,11 @@
+﻿dataset,treatment,control,n,prediction_changed,improved,regressed
+agentrx,own_taxonomy,label_only,73,17,4,2
+agentrx,foreign_taxonomy,label_only,73,17,2,5
+agentrx,merged_taxonomy,label_only,73,12,1,0
+agentrx,merged_taxonomy,foreign_taxonomy,73,18,6,2
+agentrx,merged_taxonomy,own_taxonomy,73,16,3,4
+agenterrorbench,own_taxonomy,label_only,171,66,10,7
+agenterrorbench,foreign_taxonomy,label_only,171,58,10,9
+agenterrorbench,merged_taxonomy,label_only,171,51,6,1
+agenterrorbench,merged_taxonomy,foreign_taxonomy,171,70,13,9
+agenterrorbench,merged_taxonomy,own_taxonomy,171,72,11,9

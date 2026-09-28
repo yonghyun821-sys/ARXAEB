@@ -1,0 +1,93 @@
+experiment:
+  name: agentrx-agenterrorbench-final-protocol-gemini25flash
+  seed: 20260928
+  merge_seed: 20260930
+  prompt_version: final-native-guidance-v1
+  merge_prompt_version: fresh-gpt5-metadata-only-v1
+  sample_policy: reuse-exact-audited-joint-eligible-73-plus-171
+  conditions:
+    - label_only
+    - own_taxonomy
+    - foreign_taxonomy
+    - merged_taxonomy
+
+models:
+  merge:
+    name: ${AGENTRX_AEB_FINAL_PROTOCOL_MERGE_MODEL:openai/gpt-5}
+    temperature: null
+    reasoning_effort: medium
+    max_output_tokens: 20000
+    context_window: 400000
+    tokenizer_encoding: o200k_base
+    max_tokens_parameter: max_tokens
+    provider:
+      order:
+        - openai
+    pricing_usd_per_million:
+      input: 1.25
+      output: 10.00
+  attribution:
+    name: ${AGENTRX_AEB_FINAL_PROTOCOL_MODEL:google/gemini-2.5-flash}
+    temperature: 0
+    reasoning_effort: null
+    max_output_tokens: 700
+    truncation_retry_max_output_tokens: 1400
+    context_window: 1048576
+    tokenizer_encoding: o200k_base
+    max_tokens_parameter: max_tokens
+    provider:
+      order:
+        - google-vertex
+    pricing_usd_per_million:
+      input: 0.30
+      output: 2.50
+
+api:
+  api_key_env: AGENTRX_AEB_FINAL_PROTOCOL_OPENROUTER_API_KEY
+  base_url: ${OPENROUTER_BASE_URL:https://openrouter.ai/api/v1}
+  app_title: agentrx-agenterrorbench-final-protocol-gemini25flash
+  http_referer_env: OPENROUTER_HTTP_REFERER
+  max_retries: 3
+  timeout_seconds: 240
+  provider_defaults:
+    allow_fallbacks: false
+    require_parameters: true
+    data_collection: deny
+
+cost_budget:
+  max_inference_usd: 23.00
+  max_total_usd: 25.00
+  input_token_safety_multiplier: 1.50
+  ledger_baseline_usd: 0.0
+  ledger_path: experiments/agentrx_agenterrorbench_final_protocol_gemini25flash/runtime/api_call_ledger.jsonl
+
+merge_cost_budget:
+  max_usd: 2.00
+  input_token_safety_multiplier: 1.50
+  ledger_path: experiments/agentrx_agenterrorbench_final_protocol_gemini25flash/runtime/merge_api_call_ledger.jsonl
+
+execution:
+  smoke_trajectories_per_dataset: 2
+  progress_every: 10
+  invalid_output_retries: 2
+  truncation_retries: 1
+  merge_validation_retries: 2
+
+analysis:
+  bootstrap_resamples: 10000
+  bootstrap_seed: 20260929
+  alpha: 0.05
+
+paths:
+  source_agentrx_taxonomy: taxonomies/agentrx_taxonomy.json
+  source_agenterrorbench_taxonomy: taxonomies/agenterror_taxonomy.json
+  source_merged_taxonomy: experiments/agentrx_agenterrorbench_final_protocol_gemini25flash/frozen/native_merged_taxonomy.json
+  source_merged_taxonomy_audit: experiments/agentrx_agenterrorbench_final_protocol_gemini25flash/frozen/native_merged_taxonomy_audit.json
+  prior_joint_scored_predictions: reference/prior_joint_predictions_scored.csv
+  experiment_root: experiments/agentrx_agenterrorbench_final_protocol_gemini25flash
+  prepared: experiments/agentrx_agenterrorbench_final_protocol_gemini25flash/prepared
+  frozen: experiments/agentrx_agenterrorbench_final_protocol_gemini25flash/frozen
+  artifacts: experiments/agentrx_agenterrorbench_final_protocol_gemini25flash/artifacts
+  runtime: experiments/agentrx_agenterrorbench_final_protocol_gemini25flash/runtime
+  cache: experiments/agentrx_agenterrorbench_final_protocol_gemini25flash/runtime/cache
+  runs: experiments/agentrx_agenterrorbench_final_protocol_gemini25flash/runs

@@ -1,0 +1,21 @@
+<TASK>
+{task}
+</TASK>
+
+<VISIBLE_CONTEXT>
+{visible_context}
+</VISIBLE_CONTEXT>
+
+<NATIVE_OUTPUT_LABELS>
+{native_output_labels}
+</NATIVE_OUTPUT_LABELS>
+
+{taxonomy_block}<VALID_CANDIDATE_STEP_IDS>
+{candidate_step_ids}
+</VALID_CANDIDATE_STEP_IDS>
+
+<VISIBLE_TRAJECTORY>
+{trajectory}
+</VISIBLE_TRAJECTORY>
+
+Choose exactly one predicted_failure_label from NATIVE_OUTPUT_LABELS and exactly one predicted_step_id from VALID_CANDIDATE_STEP_IDS. Both predictions must describe the same primary root-cause failure.
